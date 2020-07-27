@@ -5,7 +5,7 @@ Go语言中，也和C或者其他语言一样，我们可以声明新的类型�
 
 
 */
-package _1_struct_type
+package main
 
 import "fmt"
 
@@ -13,10 +13,11 @@ import "fmt"
 type person struct {
 	name string
 	age  int
+	sex  bool
 }
 
 // 定义一个函数，比较年龄大小 返回年龄差
-func older(p1, p2 person) (person, int) {
+func older(p1, p2 person) (v1 person, v2 int) {
 	if p1.age > p2.age {
 		return p1, p1.age - p2.age
 	}
@@ -26,8 +27,9 @@ func older(p1, p2 person) (person, int) {
 func main() {
 	var tom person // P现在就是person类型的变量了
 
-	tom.name = "Alice"                                 // 赋值"Alice"给P的name属性.
-	tom.age = 25                                       // 赋值"25"给变量P的age属性
+	tom.name = "Alice" // 赋值"Alice"给P的name属性.
+	tom.age = 25       // 赋值"25"给变量P的age属性
+	tom.sex = false
 	fmt.Printf("The person's name is %s \n", tom.name) // 访问P的name属性.
 
 	/*
@@ -43,13 +45,20 @@ func main() {
 
 		3.当然也可以通过new函数分配一个指针，此处P的类型为*person
 
-		P := new(person)
+		P := new(person) 获取到结构体地址
 	*/
 
-	eric := person{"Eric", 15}
+	eric := person{
+		name: "Eric",
+		age:  15,
+		sex:  true,
+	}
 
 	who, diff := older(eric, tom)
 
 	fmt.Println("person", who, "diff", diff)
+
+	P := new(person)
+	fmt.Println(*P)
 
 }

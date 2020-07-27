@@ -15,7 +15,7 @@ import (
 	"reflect"
 )
 
-func main() {
+func test1() {
 	var arr [10]int                                  // 声明了一个int类型的数组
 	arr[0] = 42                                      // 数组下标是从0开始的
 	arr[1] = 13                                      // 赋值操作
@@ -29,7 +29,8 @@ func main() {
 	fmt.Printf("myAll type: %T \n", myAll)
 	fmt.Println("myAll type:", reflect.TypeOf(arr))
 	fmt.Println("-----------------")
-
+}
+func test2() {
 	a := [3]int{1, 2, 3} // 声明了一个长度为3的int数组
 
 	b := [10]int{1, 2, 3} // 声明了一个长度为10的int数组，其中前三个元素初始化为1、2、3，其它默认为0
@@ -48,4 +49,28 @@ func main() {
 
 	fmt.Println(doubleArray)
 	fmt.Println(easyArray)
+}
+
+func test3() {
+	// interface{} 就能放入各种类型的值
+	xy := []interface{}{1, "2", "3", true}
+	fmt.Println(xy)
+}
+
+func test4() {
+	// 数组的增删改查
+	tempXy := []string{"a", "b", "c", "d"}
+	tempXy = append(tempXy, "e")
+	z := tempXy[:1]
+	z[0] = "zzz"
+	fmt.Println(z)
+	fmt.Println(tempXy)
+}
+
+func main() {
+
+	//test1()
+	//test2()
+	//test3()
+	test4()
 }

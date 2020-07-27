@@ -31,6 +31,10 @@ func myMax(a, b int) int {
 }
 
 func main() {
+
+	// func 注意go里面函数内部不能声明函数
+	// 但是能返回函数 闭包
+
 	var maxValue int
 
 	a, b := 1, 3

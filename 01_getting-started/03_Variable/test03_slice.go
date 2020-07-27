@@ -2,6 +2,8 @@
 
 空数组， 这个就和Python的 list 很相似了
 
+https://www.digitalocean.com/community/tutorials/understanding-arrays-and-slices-in-go
+
 slice
 
 在很多应用场景中，数组并不能满足我们的需求。在初始定义数组时，我们并不知道需要多大的数组，因此我们就需要“动态数组”。

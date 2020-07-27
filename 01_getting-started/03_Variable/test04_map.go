@@ -37,6 +37,14 @@ func main() {
 
 	// 初始化一个字典
 	rating := map[string]float32{"C": 5, "Go": 4.5, "Python": 4.5, "C++": 2}
+	fmt.Println("初始化长度是: ", len(rating))
+	delete(rating, "C")
+	fmt.Println(len(rating))
+	// 循环map k v
+	for k, v := range rating {
+		fmt.Println(k, v)
+	}
+	fmt.Println("分割---------")
 
 	// map有两个返回值，第二个返回值，如果不存在key，那么ok为false，如果存在ok为true
 	csharpRating, ok := rating["C#"]
@@ -64,5 +72,13 @@ func main() {
 
 	fmt.Println(m)
 	fmt.Println(m1)
+	// 定义 一个接口map
+	m4 := make(map[string]interface{})
+	m4["a"] = 123
+	m4["b"] = "666"
+	m4["c"] = true
+	m4["d"] = []interface{}{1, "2", "3", true}
+
+	fmt.Println(m4)
 
 }
