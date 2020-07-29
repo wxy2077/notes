@@ -65,6 +65,9 @@ func test4() {
 	z[0] = "zzz"
 	fmt.Println(z)
 	fmt.Println(tempXy)
+	// 再次添加 一遍自己
+	tempXy = append(tempXy, tempXy...)
+	fmt.Println(tempXy)
 }
 
 func main() {

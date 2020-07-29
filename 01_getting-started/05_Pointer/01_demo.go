@@ -1,6 +1,6 @@
 /*
-
- */
+练习执政
+*/
 package main
 
 import "fmt"
