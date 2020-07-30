@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+)
 
+// 声明一个结构体
 type Cat struct {
 	name   string
 	color  string
@@ -13,6 +16,8 @@ type Cat struct {
 func (c *Cat) CaptureMouse(name string) (res bool) {
 	if c.name == name {
 		fmt.Println("名字为Tom，能捉到老鼠")
+		// 由于使用了指针， 可以改变结构体的值
+		c.name = "old tom "
 		return true
 	} else {
 		fmt.Println("名字不为Tom， 捉不到老鼠")
@@ -22,12 +27,17 @@ func (c *Cat) CaptureMouse(name string) (res bool) {
 
 // 在定义一个结构体
 type Mouse struct {
-	name string
+	name  string
+	color string
+	sex   bool
 }
 
+// 结构体挂载方法 不使用指针
 func (m Mouse) Eat(stuff string) (res bool) {
 	if stuff == "奶酪" {
 		fmt.Println(m.name, "喜欢吃", stuff)
+		// 不能改变外部结构体的值
+		m.name = "old jerry"
 		return true
 	} else {
 		fmt.Println(m.name, "不喜欢吃", stuff)
@@ -35,9 +45,18 @@ func (m Mouse) Eat(stuff string) (res bool) {
 	}
 }
 
+// 模拟构造方法
+func NewMouse(name string, color string, sex bool) (m Mouse) {
+	return Mouse{
+		name:  name,
+		color: color,
+		sex:   sex,
+	}
+}
+
 func main() {
 	// 实例化结构体
-	tom := Cat{
+	Tom := Cat{
 		name:  "Tom",
 		color: "white",
 		sex:   true,
@@ -47,10 +66,14 @@ func main() {
 	}
 
 	// 调用方法
-	res := tom.CaptureMouse("Tom")
+	res := Tom.CaptureMouse("Tom")
 	fmt.Println(res)
+	fmt.Println(Tom)
+	// 通过子类属性调用子类的方法(我自己取的名字)
+	Tom.couple.Eat("糖")
+	Tom.couple.Eat("奶酪")
 
-	tom.couple.Eat("糖")
-	tom.couple.Eat("奶酪")
-
+	// 构造方法实例化
+	Tuffy := Mouse{"Tuffy", "grey", true}
+	fmt.Println(Tuffy)
 }
