@@ -7,12 +7,6 @@ import (
 	"fmt"
 )
 
-//type Cat struct {
-//	name string
-//	color string
-//	sex bool
-//}
-
 func main() {
 	a := [3]string{"a", "b", "c"}
 	// 定义一个数组指针 外部是一个指针 内部是元素
