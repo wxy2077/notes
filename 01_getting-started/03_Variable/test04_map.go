@@ -17,10 +17,20 @@ func main() {
 	//numbers := map[string]int{}  // 缩写后面加 {}
 	//numbers := make(map[string]int)  // 或者直接 make
 	// 另一种map的声明方式
-	numbers = make(map[string]int)
-	numbers["one"] = 1  //赋值
-	numbers["ten"] = 10 //赋值
-	numbers["three"] = 3
+	numbers2 := make(map[string]int)
+	numbers2["one"] = 1  //赋值
+	numbers2["ten"] = 10 //赋值
+	numbers2["three"] = 3
+	// 没有赋值  int类型默认为 0
+	foo := numbers2["four"]
+	fmt.Println(foo, "foo")
+	//numbers2["five"] = 0
+	// 如果赋值为0 如何判断是空值 还是赋的值
+	if v, ok := numbers2["five"]; ok {
+		fmt.Println("有five这个key的值", v)
+	} else {
+		fmt.Println("没有有five这个key的值", v)
+	}
 
 	fmt.Println("第三个数字是: ", numbers["three"]) // 读取数据
 	// 打印出来如:第三个数字是: 3
@@ -40,7 +50,7 @@ func main() {
 	fmt.Println("初始化长度是: ", len(rating))
 	delete(rating, "C")
 	fmt.Println(len(rating))
-	// 循环map k v
+	// 循环map k v  如果不想使用key或者value 可使用 _ 丢弃
 	for k, v := range rating {
 		fmt.Println(k, v)
 	}
