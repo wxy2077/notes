@@ -19,7 +19,7 @@ append 向slice里面追加一个或者多个元素，然后返回一个和slice
 copy 函数copy从源slice的src中复制元素到目标dst，并且返回复制的元素的个数
 
 */
-package main
+package _3_array
 
 import (
 	"fmt"

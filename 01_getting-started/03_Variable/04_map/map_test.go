@@ -6,11 +6,13 @@ map也就是Python中字典的概念，它的格式为map[keyType]valueType
 
 
 */
-package main
+package _04_map
 
-import "fmt"
+import (
+	"testing"
+)
 
-func main() {
+func TestMap(t *testing.T) {
 	// 声明一个key是字符串，值为int的字典,这种方式的声明需要在使用之前使用make初始化
 	var numbers map[string]int // 还需要make
 
@@ -23,16 +25,16 @@ func main() {
 	numbers2["three"] = 3
 	// 没有赋值  int类型默认为 0
 	foo := numbers2["four"]
-	fmt.Println(foo, "foo")
+	t.Log(foo)
 	//numbers2["five"] = 0
 	// 如果赋值为0 如何判断是空值 还是赋的值
 	if v, ok := numbers2["five"]; ok {
-		fmt.Println("有five这个key的值", v)
+		t.Log("有five这个key的值", v)
 	} else {
-		fmt.Println("没有有five这个key的值", v)
+		t.Log("没有有five这个key的值", v)
 	}
 
-	fmt.Println("第三个数字是: ", numbers["three"]) // 读取数据
+	t.Log("第三个数字是: ", numbers["three"]) // 读取数据
 	// 打印出来如:第三个数字是: 3
 	/*
 		使用map过程中需要注意的几点：
@@ -47,27 +49,27 @@ func main() {
 
 	// 初始化一个字典
 	rating := map[string]float32{"C": 5, "Go": 4.5, "Python": 4.5, "C++": 2}
-	fmt.Println("初始化长度是: ", len(rating))
+	t.Log("初始化长度是: ", len(rating))
 	delete(rating, "C")
-	fmt.Println(len(rating))
+	t.Log(len(rating))
 	// 循环map k v  如果不想使用key或者value 可使用 _ 丢弃
 	for k, v := range rating {
-		fmt.Println(k, v)
+		t.Log(k, v)
 	}
-	fmt.Println("分割---------")
+	t.Log("分割---------")
 
 	// map有两个返回值，第二个返回值，如果不存在key，那么ok为false，如果存在ok为true
 	csharpRating, ok := rating["C#"]
 
 	if ok {
-		fmt.Println("C# is in the map and its rating is ", csharpRating)
+		t.Log("C# is in the map and its rating is ", csharpRating)
 	} else {
-		fmt.Println("We have no rating associated with C# in the map")
-		fmt.Println("csharpRating", csharpRating)
+		t.Log("We have no rating associated with C# in the map")
+		t.Log("csharpRating", csharpRating)
 	}
 
 	delete(rating, "C") // 删除key为C的元素
-	fmt.Println("---------------")
+	t.Log("---------------")
 
 	//上面说过了，map也是一种引用类型，如果两个map同时指向一个底层，那么一个改变，另一个也相应的改变：
 
@@ -80,8 +82,8 @@ func main() {
 		map[Hello:Salut]
 	*/
 
-	fmt.Println(m)
-	fmt.Println(m1)
+	t.Log(m)
+	t.Log(m1)
 	// 定义 一个接口map
 	m4 := make(map[string]interface{})
 	m4["a"] = 123
@@ -89,6 +91,6 @@ func main() {
 	m4["c"] = true
 	m4["d"] = []interface{}{1, "2", "3", true}
 
-	fmt.Println(m4)
+	t.Log(m4)
 
 }

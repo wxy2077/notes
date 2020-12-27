@@ -16,4 +16,4 @@ new返回指针。
 make返回初始化后的（非零）值。
 
 */
-package main
+package _04_map

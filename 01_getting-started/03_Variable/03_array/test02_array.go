@@ -10,7 +10,7 @@
 快速判断字符串是否在一个数组中 类似Python in 函数
 https://mp.weixin.qq.com/s/ffcGphLoU-V-TO31wbJjsg
 **/
-package main
+package _3_array
 
 import (
 	"fmt"

@@ -1,33 +1,25 @@
-# GoLang program language getting started
+# GoLang 入门学习
 
-<a href="./README_zh">中文</a>
+## `go`环境变量
 
-> official documents address
+`go env GOPATH ` 这个命令可以有效输出当前使用go的路径。
+如果没有设置环境变量，就回打印默认安装位置
 
-- https://golang.google.cn
-
-
-### go environment variable
-
-The command ```go env GOPATH ``` print the effective current go path, it prints the default location if the environment variable is unset.
-
-For convenience, add the workspace's bin subdirectory to your PATH:
-
-```export PATH=$PATH:$(go env GOPATH)/bin```
+一般为了更方便，可以把工作区的`/bin`子目录添加到路径中,如下:
+`export PATH=$PATH:$(go env GOPATH)/bin`
 
 -----
-### First program
+## 第一个程序
 > https://golang.google.cn/doc/code.html#Overview
 
-1 first step, you can create `hello.go` files
+1 第一步，创建一个 `hello.go` 文件
 
-```
-package main  // Defining package names.
+```go
+package main  // 定义包名
 // You must statement  the package name in the code first line (not notes) of the source files, e.g. package main,
 // package main indicates a program that independent and enforceable, each go application should be included a package called main.
                                            
             
-
 import "fmt"  // The full name of fmt package is format, which implements the function of formatting IO (input / output).
 
 func main() {
