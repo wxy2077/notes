@@ -69,7 +69,7 @@ func NormalFunc(i int) {
 	fmt.Printf(" %d 测试函数 %s \n", i, timeStr)
 }
 
-func SignFunc(i int) {
+func SingleFunc(i int) {
 	fmt.Printf("单例测试函数执行++ %d \n", i)
 
 	once.Do(func() {
@@ -92,7 +92,7 @@ func TestGetSingletonObj(t *testing.T) {
 			//fmt.Printf("单例:  %d++++%x\n", i, unsafe.Pointer(obj))
 
 			NormalFunc(i)
-			SignFunc(i)
+			SingleFunc(i)
 
 			wg.Done()
 		}(i)

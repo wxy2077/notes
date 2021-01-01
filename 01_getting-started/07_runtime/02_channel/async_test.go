@@ -50,18 +50,18 @@ func AsyncService() chan string {
 }
 
 func TestAsyncService(t *testing.T) {
-	//retCh := AsyncService()
-	//
-	//otherTask()
-	//
-	//fmt.Println(<-retCh)
+	retCh := AsyncService()
 
-	//time.Sleep(1*time.Second)
+	otherTask()
 
-	c := make(chan string, 4) // 修改 2 为 1 就报错，修改 2 为 3 可以正常运行
-	c <- "1"
-	//c <- 2
-	fmt.Println(<-c)
+	fmt.Println(<-retCh)
+
+	time.Sleep(1 * time.Second)
+
+	//c := make(chan string, 4) // 修改 2 为 1 就报错，修改 2 为 3 可以正常运行
+	//c <- "1"
+	////c <- 2
+	//fmt.Println(<-c)
 	//fmt.Println(<-c)
 
 }
