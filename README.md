@@ -27,8 +27,11 @@ func TestString(t *testing.T){
 ### 2 基础算法学习
 
 
-### 3 Gin框架练习 
-
+### 3 一些案例框架练习 
+- [2 go http请求库的使用](03_case_demo/02_http_demo/README.md)
+- [3 go mysql 和 gorm的基本使用(使用Viper读取yaml配置文件)](03_case_demo/)
+- [4 go 七牛云上传在线视频](03_case_demo/04_qiniu_upload)
+- [5 gRPC学习使用](03_case_demo/05_go_grpc/README.md)
 
 
 ### 参考
@@ -40,3 +43,4 @@ func TestString(t *testing.T){
 - [go web编程在线书籍](https://learnku.com/docs/build-web-application-with-golang)
 - [go在线练习](https://tour.golang.org/list)
 - [https://golang.google.cn/](https://golang.google.cn/)
+- [JSON解析](https://stackoverflow.com/questions/35583735/unmarshaling-into-an-interface-and-then-performing-type-assertion)
