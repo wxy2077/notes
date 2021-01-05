@@ -1,0 +1,10 @@
+# mysql connect configuration
+mysql:
+  path: '172.16.137.129:3306'
+  config: 'charset=utf8mb4&parseTime=True&loc=Local'
+  db-name: 'temp_db_date'
+  username: 'root'
+  password: 'Admin12345-'
+  max-idle-conns: 10
+  max-open-conns: 100
+  log-mode: false
