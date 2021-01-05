@@ -32,7 +32,8 @@ func TestString(t *testing.T){
 - [3 go mysql 和 gorm的基本使用(使用Viper读取yaml配置文件)](03_case_demo/)
 - [4 go 七牛云上传在线视频](03_case_demo/04_qiniu_upload)
 - [5 gRPC学习使用](03_case_demo/05_go_grpc/README.md)
-
+- [6 cron定时任务基本使用](03_case_demo/06_cron_task/README.md)
+- [7 JWT token的基本使用](03_case_demo/07_jwt/README.md)
 
 ### 参考
 
