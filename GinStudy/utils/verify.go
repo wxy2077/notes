@@ -12,4 +12,6 @@ package utils
 var (
 	PageInfoVerify      = Rules{"Page": {Ge("1")}, "PageSize": {Le("50")}}
 	ArticleDetailVerify = Rules{"Href": {NotEmpty()}}
+	RegisterVerify      = Rules{"Username": {NotEmpty()}, "Password": {NotEmpty()}}
+	LoginVerify         = Rules{"Username": {NotEmpty()}, "Password": {NotEmpty()}}
 )

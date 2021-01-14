@@ -77,6 +77,7 @@ func TestToken(t *testing.T) {
 	//fmt.Println(token, err)
 
 	token := "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJRCI6MTIzLCJVc2VybmFtZSI6IjIyMiIsImV4cCI6MTYwOTg1ODE4OH0.VCLoPQjW9DjAyi_NwQXmC2CVnevZ0DB-wq-wHyxIl9c"
+
 	claims, err := parseToken(token)
 	if err != nil {
 		fmt.Println(err)

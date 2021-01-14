@@ -45,3 +45,5 @@ func TestString(t *testing.T){
 - [go在线练习](https://tour.golang.org/list)
 - [https://golang.google.cn/](https://golang.google.cn/)
 - [JSON解析](https://stackoverflow.com/questions/35583735/unmarshaling-into-an-interface-and-then-performing-type-assertion)
+- [Go语言设计与实现](https://draveness.me/golang/)
+- [Go语言高级编程](https://hezhiqiang8909.gitbook.io/go/)

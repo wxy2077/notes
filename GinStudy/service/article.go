@@ -33,9 +33,9 @@ func FetchRecommendArticleList() (RecommendArticleList []model.RecommendArticle)
 /*
 获取文章列表
 */
-func FetchArticleIndexList(pageInfo request.PageInfo, Category request.ArticleCategory) (ArticleIndexList []model.ArticleIndex, total int64) {
-	limit := pageInfo.PageSize
-	offset := pageInfo.PageSize * (pageInfo.Page - 1)
+func FetchArticleIndexList(Category request.ArticleCategory) (ArticleIndexList []model.ArticleIndex, total int64) {
+	limit := Category.PageSize
+	offset := Category.PageSize * (Category.Page - 1)
 
 	cateId := Category.CateId
 

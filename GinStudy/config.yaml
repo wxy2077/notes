@@ -11,6 +11,7 @@ jwt:
 system:
   env: 'debug'    # debug release
   addr: '127.0.0.1:7010'
+  use-multipoint: false  # 使用多点登录
 
 
 # zap logger configuration

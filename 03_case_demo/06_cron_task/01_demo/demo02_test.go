@@ -16,13 +16,24 @@ import (
 )
 
 func Test02Cron(t *testing.T) {
-	c := cron.New()
+	// 设置时区
+	nyc, _ := time.LoadLocation("Asia/Shanghai")
+
+	c := cron.New(cron.WithLocation(nyc))
 
 	_, _ = c.AddFunc("* * * * *", jobTask)
 
+	// 定时运行一次 https://github.com/robfig/cron/pull/317  目前不支持
+	//_, _ = c.AddFunc("@once 2021-01-09 10:45:00", func() {
+	//	fmt.Println("Hello! Now is 2021-01-09 10:45:00")
+	//})
+
 	c.Start()
 
-	time.Sleep(3 * time.Minute)
+	//time.Sleep(3 * time.Minute)
+
+	// 阻塞
+	select {}
 
 	//t1 := time.NewTimer(time.Second * 10)
 	//

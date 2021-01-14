@@ -28,7 +28,7 @@ func (t *testJob) Run() {
 func Test03Cron(t *testing.T) {
 
 	// 设置时区
-	nyc, _ := time.LoadLocation("America/New_York")
+	nyc, _ := time.LoadLocation("Asia/Shanghai")
 	// 设置时区，  支持秒级调度
 	GlobalCron := cron.New(cron.WithLocation(nyc), cron.WithSeconds())
 

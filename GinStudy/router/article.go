@@ -16,8 +16,9 @@ import (
 )
 
 func InitArticleRouter(Router *gin.RouterGroup) {
-	InitArticleGroup := Router.Group("/article").Use(middleware.ZapLogger())
-	//.Use(middleware.JWTAuth()).Use(middleware.CasbinHandler())
+	InitArticleGroup := Router.Group("/article").
+		Use(middleware.ZapLogger()).
+		Use(middleware.JWTAuth()) //.Use(middleware.CasbinHandler())
 	{
 		InitArticleGroup.GET("/get/recommend", v1.GetRecommendArticle) // 获取所有文章
 		InitArticleGroup.GET("/get/list", v1.GetArticleList)           // 获取所有文章

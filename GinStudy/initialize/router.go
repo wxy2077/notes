@@ -29,9 +29,10 @@ func Routers() *gin.Engine {
 	}
 
 	// 方便统一添加路由组前缀 多服务器上线使用
-	ApiGroup := Router.Group("/mini/api")
+	V1ApiGroup := Router.Group("/api/v1")
 
-	router.InitArticleRouter(ApiGroup) // 注册文章路由
+	router.InitUserRouter(V1ApiGroup)    // 注册用户路由
+	router.InitArticleRouter(V1ApiGroup) // 注册文章路由
 
 	return Router
 }

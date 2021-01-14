@@ -41,23 +41,24 @@ func GetRecommendArticle(c *gin.Context) {
 // @Success 200 string {string}"{"code":200,"msg":"success","data":{}}"
 // @Router /mini/api/article/get/list [get]
 func GetArticleList(c *gin.Context) {
-	pageInfo := request.PageInfo{Page: 1, PageSize: 10}
-	cateInfo := request.ArticleCategory{}
+	// 初始化请求参数
+	cateInfo := request.ArticleCategory{CateId: 0,
+		PageInfo: request.PageInfo{Page: 1, PageSize: 10},
+	}
 
-	_ = c.ShouldBindQuery(&pageInfo)
 	_ = c.ShouldBindQuery(&cateInfo)
 
-	if err := utils.Verify(pageInfo, utils.PageInfoVerify); err != nil {
+	if err := utils.Verify(cateInfo.PageInfo, utils.PageInfoVerify); err != nil {
 		response.FailWithMessage(err.Error(), c)
 		return
 	}
-	articleList, total := service.FetchArticleIndexList(pageInfo, cateInfo)
+	articleList, total := service.FetchArticleIndexList(cateInfo)
 
 	response.OkWithDetailed(response.PageResult{
 		Data:     articleList,
 		Total:    total,
-		Page:     pageInfo.Page,
-		PageSize: pageInfo.PageSize,
+		Page:     cateInfo.Page,
+		PageSize: cateInfo.PageSize,
 	}, "success", c)
 
 }

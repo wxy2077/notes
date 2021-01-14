@@ -10,6 +10,7 @@
 package config
 
 type System struct {
-	Env  string `mapstructure:"env" json:"env" yaml:"env"`
-	Addr string `mapstructure:"addr" json:"addr" yaml:"addr"`
+	Env           string `mapstructure:"env" json:"env" yaml:"env"`
+	Addr          string `mapstructure:"addr" json:"addr" yaml:"addr"`
+	UseMultipoint bool   `mapstructure:"use-multipoint" json:"useMultipoint" yaml:"use-multipoint"`
 }

@@ -12,6 +12,7 @@ package global
 import (
 	"gin_study/config"
 	"github.com/go-redis/redis"
+	"github.com/robfig/cron/v3"
 	"github.com/spf13/viper"
 	"go.uber.org/zap"
 	"gorm.io/gorm"
@@ -23,4 +24,5 @@ var (
 	GIN_CONFIG config.Server
 	GIN_LOG    *zap.Logger
 	GIN_REDIS  *redis.Client
+	GIN_CRON   *cron.Cron
 )

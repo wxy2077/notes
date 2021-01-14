@@ -12,6 +12,7 @@ package core
 import (
 	"gin_study/global"
 	"gin_study/initialize"
+	"go.uber.org/zap"
 	"net/http"
 	"time"
 )
@@ -27,7 +28,9 @@ func RunWindowsServer() {
 	// 取系统配置的地址 并格式化:
 	address := global.GIN_CONFIG.System.Addr
 
-	//_ = Router.Run(address)
+	global.GIN_LOG.Info("当前地址为:", zap.Any("ipAddress", address))
+
+	_ = Router.Run(address)
 	s := &http.Server{
 		Addr:           address,
 		Handler:        Router,

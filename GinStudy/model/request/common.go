@@ -18,6 +18,7 @@ type PageInfo struct {
 // 请求文章分类
 type ArticleCategory struct {
 	CateId int `json:"cateId" form:"cateId"`
+	PageInfo
 }
 
 // 请求文章详情

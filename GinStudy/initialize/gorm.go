@@ -11,6 +11,7 @@ package initialize
 
 import (
 	"gin_study/global"
+	"gin_study/model"
 	"go.uber.org/zap"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -23,6 +24,45 @@ func Gorm() *gorm.DB {
 
 	return GormMysql()
 
+}
+
+// MysqlTables
+//@author: SliverHorn
+//@function: MysqlTables
+//@description: 注册数据库表专用
+//@param: db *gorm.DB
+
+func MysqlTables(db *gorm.DB) {
+	err := db.AutoMigrate(
+		model.SysUser{},
+		//model.SysAuthority{},
+		//model.System{},
+		//model.CasbinModel{},
+		//model.SysApi{},
+		//model.SysBaseMenu{},
+		//model.SysBaseMenuParameter{},
+		//model.JwtBlacklist{},
+		//model.SysDictionary{},
+		//model.SysDictionaryDetail{},
+		//model.ExaFileUploadAndDownload{},
+		//model.ExaFile{},
+		//model.ExaFileChunk{},
+		//model.ExaSimpleUploader{},
+		//model.ExaCustomer{},
+		//model.SysOperationRecord{},
+		//model.WorkflowProcess{},
+		//model.WorkflowNode{},
+		//model.WorkflowEdge{},
+		//model.WorkflowStartPoint{},
+		//model.WorkflowEndPoint{},
+		//model.WorkflowMove{},
+		//model.ExaWfLeave{},
+	)
+	if err != nil {
+		global.GIN_LOG.Error("register table failed", zap.Any("err", err))
+		os.Exit(0)
+	}
+	global.GIN_LOG.Info("register table success")
 }
 
 // GormMysql 初始化Mysql数据库
