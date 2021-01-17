@@ -15,6 +15,7 @@ package _3_array
 import (
 	"fmt"
 	"sort"
+	"testing"
 )
 
 // 首先用循环实现 但是这种方式有一个弊端，就是要遍历整个字符串数组 这是一个非常费时间的操作
@@ -40,7 +41,7 @@ func in(target string, strArray []string) bool {
 	return false
 }
 
-func main() {
+func TestArray(t *testing.T) {
 	nameList := []string{"赵云", "王小右", "张飞"}
 	myName := "王小右"
 	fmt.Println(loopIn(myName, nameList))

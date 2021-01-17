@@ -23,9 +23,10 @@ package _3_array
 
 import (
 	"fmt"
+	"testing"
 )
 
-func main() {
+func TestSlice(t *testing.T) {
 	// 和声明array一样，只是少了长度
 	var fslice [10]int
 	fmt.Println(fslice)
@@ -48,5 +49,55 @@ func main() {
 	var newSlice []int
 	newSlice = array[2:4:7]
 	fmt.Println(newSlice)
+}
 
+func TestSliceCURD(t *testing.T) {
+	// 切片的操作
+	strSlice := []string{"a", "z", "1", "2", "3"}
+
+	// 添加
+	strSlice = append(strSlice, "666")
+
+	t.Log(strSlice)
+
+	// 修改 和数组一样
+	strSlice[0] = "aaaa"
+	t.Log(strSlice)
+
+	// 删除使用append实现 重新赋值
+	// 删除第一个元素 [1:]
+	//strSlice = strSlice[1:]
+	//
+	//t.Log(strSlice)
+	//
+	//// 删除第二个元素  a = append(a[:i], a[i+1:]...) // 删除中间第i个元素(只删除一个)
+	//strSlice = append(strSlice[:1], strSlice[2:]...)
+	//t.Log(strSlice)
+	//
+	//strSlice = remove(strSlice, 2)
+	//
+	//t.Log(strSlice)
+	//
+	//strSlice = newRemove01(strSlice, 1)
+	//t.Log(strSlice)
+
+	strSlice = newRemove02(strSlice, 1)
+	t.Log(strSlice)
+}
+
+// 利用上面的方式 封装程一个函数 效率很低 因为是copy重新赋值操作
+func remove(slice []string, s int) []string {
+	return append(slice[:s], slice[s+1:]...)
+}
+
+func newRemove01(s []string, i int) []string {
+	s[len(s)-1], s[i] = s[i], s[len(s)-1]
+	return s[:len(s)-1]
+}
+
+//参考 https://stackoverflow.com/questions/37334119/how-to-delete-an-element-from-a-slice-in-golang
+func newRemove02(s []string, i int) []string {
+	s[i] = s[len(s)-1]
+	// We do not need to put s[i] at the end, as it will be discarded anyway
+	return s[:len(s)-1]
 }

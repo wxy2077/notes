@@ -11,23 +11,24 @@ var arr [n]type
 package _3_array
 
 import (
+	"fmt"
 	"reflect"
 	"testing"
 )
 
 func Test01(t *testing.T) {
-	var arr [10]int                              // 声明了一个int类型的数组
-	arr[0] = 42                                  // 数组下标是从0开始的
-	arr[1] = 13                                  // 赋值操作
-	t.Log("The first element is %d \n", arr[0])  // 获取数据，返回42
-	t.Log("The second element is %d \n", arr[1]) // 获取数据，返回13
-	t.Log("The last element is %d \n", arr[9])   //返回未赋值的最后一个元素，默认返回0
-	t.Log("The all elements is %d \n", arr)      //输出全部数据
+	var arr [10]int                                           // 声明了一个int类型的数组
+	arr[0] = 42                                               // 数组下标是从0开始的
+	arr[1] = 13                                               // 赋值操作
+	t.Log(fmt.Sprintf("The first element is %d \n", arr[0]))  // 获取数据，返回42
+	t.Log(fmt.Sprintf("The second element is %d \n", arr[1])) // 获取数据，返回13
+	t.Log(fmt.Sprintf("The last element is %d \n", arr[9]))   //返回未赋值的最后一个元素，默认返回0
+	t.Log(fmt.Sprintf("The all elements is %d \n", arr))      //输出全部数据
 	var myAll [2]string
 	//myAll = append(myAll, 1)
 	//myAll = append(myAll, 1)
-	t.Log("myAll type: %T \n", myAll)
-	t.Log("myAll type:", reflect.TypeOf(arr))
+	t.Log(fmt.Sprintf("myAll type: %T \n", myAll))
+	t.Log(fmt.Sprintf("myAll type: %s \n", reflect.TypeOf(arr)))
 	t.Log("-----------------")
 }
 func Test02(t *testing.T) {
@@ -53,19 +54,22 @@ func Test02(t *testing.T) {
 
 func Test03(t *testing.T) {
 	// interface{} 就能放入各种类型的值
-	xy := []interface{}{1, "2", "3", true}
+	xy := [4]interface{}{1, "2", "3", true}
 	t.Log(xy)
 }
 
 func Test04(t *testing.T) {
-	// 数组的增删改查
-	tempXy := []string{"a", "b", "c", "d"}
-	tempXy = append(tempXy, "e")
-	z := tempXy[:1]
-	z[0] = "zzz"
-	t.Log(z)
-	t.Log(tempXy)
-	// 再次添加 一遍自己
-	tempXy = append(tempXy, tempXy...)
+	// 数组的操作 只能修改数据，无法调整大小
+	tempXy := [5]string{"a", "b", "c"}
+
+	// https://stackoverflow.com/questions/41668053/cap-vs-len-of-slice-in-golang
+	t.Log(len(tempXy))
+	t.Log(cap(tempXy))
+
+	for _, v := range tempXy {
+		t.Log(v)
+	}
+
+	tempXy[4] = "e"
 	t.Log(tempXy)
 }
