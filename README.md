@@ -34,6 +34,7 @@ func TestString(t *testing.T){
 - [5 gRPC学习使用](03_case_demo/05_go_grpc/README.md)
 - [6 cron定时任务基本使用](03_case_demo/06_cron_task/README.md)
 - [7 JWT token的基本使用](03_case_demo/07_jwt/README.md)
+- [8 casbin权限管理demo](03_case_demo/08_casbin/README.md)
 
 ### 参考
 
