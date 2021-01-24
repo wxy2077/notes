@@ -38,13 +38,16 @@ func TestString(t *testing.T){
 
 ### 参考
 
-- [他人学习笔记1](https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/preface.md)
+- [https://github.com/overnote/over-golang](https://github.com/overnote/over-golang)
 - [github.com/inancgumus/learngo](https://github.com/inancgumus/learngo)
 - [极客go学习笔记](https://github.com/CoderCharm/gostudy)
 - [go语言程序设计](https://docs.hacknode.org/gopl-zh/index.html)
 - [go web编程在线书籍](https://learnku.com/docs/build-web-application-with-golang)
+- [go web编程代码](https://github.com/astaxie/build-web-application-with-golang/blob/master/zh/preface.md)
 - [go在线练习](https://tour.golang.org/list)
 - [https://golang.google.cn/](https://golang.google.cn/)
 - [JSON解析](https://stackoverflow.com/questions/35583735/unmarshaling-into-an-interface-and-then-performing-type-assertion)
 - [Go语言设计与实现](https://draveness.me/golang/)
 - [Go语言高级编程](https://hezhiqiang8909.gitbook.io/go/)
+- [Go夜读](https://space.bilibili.com/326749661)
+- [https://github.com/hantmac/Mastering_Go_ZH_CN](https://github.com/hantmac/Mastering_Go_ZH_CN)

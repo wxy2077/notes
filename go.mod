@@ -1,9 +1,10 @@
 module practice
 
-go 1.13
+go 1.15
 
 require (
 	github.com/casbin/casbin/v2 v2.20.2
+	github.com/casbin/gorm-adapter/v3 v3.0.5
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/elazarl/goproxy v0.0.0-20210110162100-a92cc753f88e // indirect
 	github.com/fsnotify/fsnotify v1.4.9
