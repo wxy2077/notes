@@ -5,6 +5,9 @@
 
 目前个人只是看看demo，还没有场景需要用到这个。目前还是REST API使用更多一些, 也可以构建 RESTful 服务发送`protobuf`消息。
 
+Goland 可以安装第三方插件`protobuf` [Goland2019 插件离线下载地址](https://github.com/ksprojects/protobuf-jetbrains-plugin/releases)
+`proto`文件就可以直接语法提示
+
 ## 依赖安装
 
 ```shell
@@ -22,6 +25,10 @@ go get -u google.golang.org/grpc
 ## gRPC REST GraphQL Web
 
 ## 使用场景
+
+## 示例
+- `/helloworld` gRPC demo
+- `/go_micro` go-micro demo 
 
 
 # 参考

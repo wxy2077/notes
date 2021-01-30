@@ -65,9 +65,6 @@ func Regex(regex string) string {
 	return "regex=" + regex
 }
 
-// 存放验证规则的地方
-type Rules map[string][]string
-
 func verify(st interface{}, roleMap Rules) (err error) {
 
 	// 限定 比较返回值为 以下几个
@@ -246,6 +243,9 @@ func compare(value interface{}, VerifyStr string) bool {
 func AnyFunc() string {
 	return "任意函数的返回值"
 }
+
+// 存放验证规则的地方 一个字段可以有多个校验方法
+type Rules map[string][]string
 
 var (
 	// AnyFunc() 为非法的校验函数 避免人为写错

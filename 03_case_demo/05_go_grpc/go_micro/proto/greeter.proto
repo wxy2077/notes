@@ -1,0 +1,24 @@
+
+// 版本
+syntax = "proto3";
+
+
+//option go_package = "google.golang.org/grpc/examples/helloworld/helloworld";
+
+package  go.micro.service.imooc;
+
+// 服务名字随意
+service Nemo{
+    // rpc 请求 和 响应数据格式字段定义
+    rpc sayHello(sayRequest) returns(sayResponse){}
+}
+
+// 定义好 就不要轻易变动字段
+// 字段最好不要超过15个 否则
+message sayRequest{
+    string message = 1;
+}
+
+message sayResponse{
+    string answer = 1;
+}

@@ -3,6 +3,8 @@ module practice
 go 1.15
 
 require (
+	github.com/asim/go-micro/cmd/protoc-gen-micro/v3 v3.0.0-20210120213617-60010e82e2c7 // indirect
+	github.com/asim/go-micro/v3 v3.0.1
 	github.com/casbin/casbin/v2 v2.20.2
 	github.com/casbin/gorm-adapter/v3 v3.0.5
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
@@ -13,6 +15,7 @@ require (
 	github.com/google/uuid v1.1.2
 	github.com/kr/text v0.2.0 // indirect
 	github.com/magiconair/properties v1.8.4 // indirect
+	github.com/micro/go-micro/v2 v2.9.1
 	github.com/mitchellh/mapstructure v1.4.0 // indirect
 	github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e // indirect
 	github.com/parnurzeal/gorequest v0.2.16
@@ -21,6 +24,7 @@ require (
 	github.com/robfig/cron/v3 v3.0.1
 	github.com/spf13/afero v1.5.1 // indirect
 	github.com/spf13/cast v1.3.1 // indirect
+	github.com/spf13/cobra v1.1.1
 	github.com/spf13/jwalterweatherman v1.1.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/spf13/viper v1.7.1
