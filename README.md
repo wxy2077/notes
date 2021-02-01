@@ -35,6 +35,7 @@ func TestString(t *testing.T){
 - [6 cron定时任务基本使用](03_case_demo/06_cron_task/README.md)
 - [7 JWT token的基本使用](03_case_demo/07_jwt/README.md)
 - [8 casbin权限管理demo](03_case_demo/08_casbin/README.md)
+- [9 标准库net/http仿写一个gin框架](03_case_demo/09_custom_web_framework)
 
 ### 参考
 
