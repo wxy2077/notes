@@ -12,6 +12,7 @@ package gee
 import "net/http"
 
 type Route struct {
+	// 存储 请求方式-路由 : 请求处理函数
 	handlers map[string]HandlerFunc
 }
 

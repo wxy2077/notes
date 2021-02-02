@@ -40,6 +40,13 @@ type Handler interface {
 
 func ListenAndServe(address string, h Handler) error
 
+这种是实现 Handler接口 ServeHTTP(ResponseWriter, *Request) 的方式启动服务。
+
+该接口只定义了一个方法，只要一个类型实现了这个 ServeHTTP 方法，
+就可以把该类型的变量直接赋值给 Handler接口，本次demo就是基于这种方式实现
+
+后面的gee也是这种方式
+
 **/
 package main
 

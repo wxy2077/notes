@@ -1,5 +1,5 @@
 /*
-* @Time    : 2021-02-01 20:33
+* @Time    : 2021-02-02 19:06
 * @Author  : CoderCharm
 * @File    : context.go
 * @Software: GoLand
@@ -15,28 +15,32 @@ import (
 	"net/http"
 )
 
-// 用于返回JSON数据
 type H map[string]interface{}
 
-// 存储请求上下文信息
 type Context struct {
-	Req    *http.Request
+	// origin objects
 	Writer http.ResponseWriter
-
-	// 把一些基础信息单独抽出来
-	Path       string
-	Method     string
+	Req    *http.Request
+	// request info
+	Path   string
+	Method string
+	Params map[string]string
+	// response info
 	StatusCode int
 }
 
-// 构建上下文实例
-func NewContext(w http.ResponseWriter, r *http.Request) *Context {
+func newContext(w http.ResponseWriter, req *http.Request) *Context {
 	return &Context{
-		Req:    r,
 		Writer: w,
-		Path:   r.URL.Path,
-		Method: r.Method,
+		Req:    req,
+		Path:   req.URL.Path,
+		Method: req.Method,
 	}
+}
+
+func (c *Context) Param(key string) string {
+	value, _ := c.Params[key]
+	return value
 }
 
 // 获取url的查询参数
