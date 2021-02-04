@@ -19,17 +19,17 @@ import (
 // 路由分组
 // https://github.com/gin-gonic/gin/blob/master/routergroup.go#L41
 type RouterGroup struct {
-	prefix string
-	engine *Engine
-	parent *RouterGroup
+	prefix string       // 前缀
+	engine *Engine      // 内部的Engine始终保证为共享的一个
+	parent *RouterGroup // 父路由
 }
 
 // 核心
 type Engine struct {
-	*RouterGroup
+	*RouterGroup // 使Engine 也拥有RouterGroup的方法
 }
 
-// Get方法
+// Get方法 这里没有实现响应处理函数
 func (group *RouterGroup) Get(pattern string) {
 	fmt.Printf("Get %s%s\n", group.prefix, pattern)
 }
@@ -51,16 +51,20 @@ func New() *Engine {
 
 func TestRouter(t *testing.T) {
 	// 创建实例
-	e := New()
+	r := New()
 
-	e.Get("/index")
+	r.Get("/index")
 
 	// 路由分组
-	api := e.Group("/api")
+	api := r.Group("/api")
 	api.Get("/123")
 
 	// api子路由分组
 	v1 := api.Group("/v1")
 	v1.Get("/666")
 
+	// 输出
+	// Get /index
+	// Get /api/123
+	// Get /api/v1/666
 }

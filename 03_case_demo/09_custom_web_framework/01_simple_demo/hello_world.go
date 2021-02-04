@@ -12,6 +12,8 @@ https://stackoverflow.com/questions/31622052/how-to-serve-up-a-json-response-usi
 
 以下为Golang http 标准库核心服务
 
+https://github.com/golang/go/blob/e491c6eea9ad599a0ae766a3217bd9a16ca3a25a/src/net/http/server.go#L2951
+
 func (srv *Server) Serve(l net.Listener) error {
 	if fn := testHookServerServe; fn != nil {
 		fn(srv, l) // call hook with unwrapped listener

@@ -30,7 +30,8 @@ func RunWindowsServer() {
 
 	global.GIN_LOG.Info("当前地址为:", zap.Any("ipAddress", address))
 
-	_ = Router.Run(address)
+	//_ = Router.Run(address) // gin启动web服务
+	// 启用原生的 web服务器 方便其他配置
 	s := &http.Server{
 		Addr:           address,
 		Handler:        Router,

@@ -31,11 +31,15 @@ func LogHook() gee.HandlerFunc {
 
 func main() {
 	r := gee.New()
+	// 捕获所有异常中间件
+	r.Use(gee.Recovery())
 
+	// 使用自定义中间件
 	r.Use(LogHook())
 
 	r.GET("/index", func(c *gee.Context) {
-		c.HTML(http.StatusOK, "<h1>Index Page</h1>")
+		names := []string{"test_str"}
+		c.String(http.StatusOK, names[100])
 	})
 
 	v1 := r.Group("/v1")
@@ -45,7 +49,7 @@ func main() {
 		})
 
 		v1.GET("/hello", func(c *gee.Context) {
-			// expect /hello?name=geektutu
+			// expect /hello?name=Erwin
 			c.String(http.StatusOK, "hello %s, you're at %s\n", c.Query("name"), c.Path)
 		})
 	}
@@ -53,7 +57,7 @@ func main() {
 	v2 := r.Group("/v2")
 	{
 		v2.GET("/hello/:name", func(c *gee.Context) {
-			// expect /hello/geektutu
+			// expect /hello/Levi
 			c.String(http.StatusOK, "hello %s, you're at %s\n", c.Param("name"), c.Path)
 		})
 		v2.POST("/login", func(c *gee.Context) {

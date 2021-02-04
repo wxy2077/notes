@@ -45,9 +45,18 @@ func (c *Context) Next() {
 	}
 }
 
+// 直接中断响应
+func (c *Context) Fail(code int, err string) {
+	// 直接让计数下角标 == 中间件数组长度, 即上Next的 index < 3 不成立
+	c.index = len(c.handlers)
+	// 返回响应信息等 操作
+	fmt.Println(err)
+}
+
 // A 中间件
 func middlewareA(c *Context) {
 	fmt.Println("A--1")
+	//c.Fail(500, "中断操作")
 	c.Next()
 	fmt.Println("A--2")
 }
