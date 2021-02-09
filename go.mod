@@ -16,6 +16,8 @@ require (
 	github.com/kr/text v0.2.0 // indirect
 	github.com/magiconair/properties v1.8.4 // indirect
 	github.com/micro/go-micro/v2 v2.9.1
+	github.com/micro/go-plugins/config/source/consul/v2 v2.9.1 // indirect
+	github.com/micro/go-plugins/registry/consul/v2 v2.9.1 // indirect
 	github.com/mitchellh/mapstructure v1.4.0 // indirect
 	github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e // indirect
 	github.com/parnurzeal/gorequest v0.2.16
