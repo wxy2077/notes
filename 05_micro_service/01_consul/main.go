@@ -71,14 +71,14 @@ func GetConsulConfig(host string, port int64, prefix string) (config.Config, err
 		consul.StripPrefix(true),
 	)
 	//配置初始化
-	config2, err := config.NewConfig()
+	newConfig, err := config.NewConfig()
 
 	if err != nil {
-		return config2, err
+		return newConfig, err
 	}
 	//加载配置
-	err = config2.Load(consulSource)
-	return config2, err
+	err = newConfig.Load(consulSource)
+	return newConfig, err
 }
 
 // MySQL配置结构体

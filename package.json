@@ -1,0 +1,18 @@
+{
+  "name": "notes",
+  "version": "1.0.0",
+  "description": "个人学习笔记",
+  "main": "index.js",
+  "repository": "https://github.com/CoderCharm/go_notes.git",
+  "author": "王小右 <wg_python@163.com>",
+  "license": "MIT",
+  "private": false,
+  "devDependencies": {
+    "vitepress": "^0.12.2"
+  },
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
+  }
+}

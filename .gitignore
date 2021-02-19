@@ -103,6 +103,13 @@ venv.bak/
 # mkdocs documentation
 /site
 
+.DS_Store
+.vite_opt_cache
+dist
+node_modules
+TODOs.md
+.vscode
+
 # mypy
 .mypy_cache/
 © 2020 GitHub, Inc.

@@ -16,7 +16,7 @@ import (
 )
 
 func main() {
-	rabbitmq := RabbitMQ.NewRabbitMQSimple("" + "wxy")
+	rabbitmq := RabbitMQ.NewRabbitMQSimple("wxy")
 	defer rabbitmq.Destory()
 
 	rabbitmq.PublishSimple("Hello MQ!")

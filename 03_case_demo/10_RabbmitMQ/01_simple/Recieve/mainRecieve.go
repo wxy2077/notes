@@ -13,6 +13,6 @@ package main
 import "practice/03_case_demo/10_RabbmitMQ/01_simple/RabbitMQ"
 
 func main() {
-	rabbitmq := RabbitMQ.NewRabbitMQSimple("" + "wxy")
+	rabbitmq := RabbitMQ.NewRabbitMQSimple("wxy")
 	rabbitmq.ConsumeSimple()
 }
