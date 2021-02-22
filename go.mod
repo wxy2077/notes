@@ -22,6 +22,7 @@ require (
 	github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e // indirect
 	github.com/parnurzeal/gorequest v0.2.16
 	github.com/pelletier/go-toml v1.8.1 // indirect
+	github.com/pkg/profile v1.5.0 // indirect
 	github.com/qiniu/api.v7/v7 v7.8.0
 	github.com/robfig/cron/v3 v3.0.1
 	github.com/spf13/afero v1.5.1 // indirect
