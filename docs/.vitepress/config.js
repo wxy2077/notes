@@ -2,7 +2,7 @@ module.exports = {
     title: '王小右笔记',
     description: 'Just For Fun',
     lang: 'zh-CN',
-    heroImage: "/logo.png",
+    heroImage: "https://cdn.jsdelivr.net/gh/CoderCharm/notes@master/docs/logo.png",
     base: "/notes/",
     themeConfig: {
         repo: 'CoderCharm/notes',

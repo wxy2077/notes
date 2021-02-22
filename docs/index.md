@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: logo.png
+heroImage: https://cdn.jsdelivr.net/gh/CoderCharm/notes@master/docs/logo.png
 heroAlt: Logo image
 heroText: Just For Fun
 tagline: 王小右个人笔记
