@@ -58,7 +58,7 @@ func countBits(num int) []int {
 }
 
 // 解法2 评论上的
-func count2Biites(num int) []int {
+func count2Bites(num int) []int {
 	//	1: 0001     3:  0011      0: 0000
 	//	2: 0010     6:  0110      1: 0001
 	//	4: 0100     12: 1100      2: 0010
