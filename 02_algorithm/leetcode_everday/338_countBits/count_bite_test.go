@@ -89,7 +89,7 @@ func TestCount(t *testing.T) {
 	t.Log(countBits(2))
 	t.Log(countBits(5))
 
-	t.Log(count2Biites(2))
-	t.Log(count2Biites(5))
+	t.Log(count2Bites(2))
+	t.Log(count2Bites(5))
 
 }
