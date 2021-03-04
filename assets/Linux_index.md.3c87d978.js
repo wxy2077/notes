@@ -1,0 +1,1 @@
+import{o as t,c as a,a as e}from"./app.500a7ca3.js";const n='{"title":"","description":"","frontmatter":{},"relativePath":"Linux/index.md","lastUpdated":1614867766297}',r={},i=e("p",null,"linux",-1);r.render=function(e,n,r,l,o,d){return t(),a("div",null,[i])};export default r;export{n as __pageData};
