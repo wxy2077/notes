@@ -36,6 +36,8 @@ import (
 	"testing"
 )
 
+// 时间复杂度 O(2N) 两次for循环 随着N增长而增长
+// 空间复杂度 O(1)  list 大小是固定的，并不会随着N增长变化
 func firstUniqChar(s string) byte {
 	// 一共26个字母 构建长度26的数组
 	list := make([]int, 26)
